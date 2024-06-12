@@ -21,7 +21,7 @@ app.use((req, res, next) => {
     if (login && password && login === auth.login && password === auth.password) {
       return next();
     }
-    res.set('WWW-Authenticate', 'Basic realm="401"')
+    res.set('WWW-Authenticate', 'Basic')
     res.status(401).send('Unauthorized')
   
 });
