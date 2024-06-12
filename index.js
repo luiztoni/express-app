@@ -4,9 +4,9 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log('REquisção');
-    console.log(req.steps.trigger.event.body);
-    console.log('REquisção stringficada');
+    console.log('REquisção steps');
+    console.log(req.steps);
+    console.log('Requisção stringficada');
     //console.log(JSON.stringify(req));
     const auth = {login: 'admin', password: 'admin'}  
     const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
