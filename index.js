@@ -4,8 +4,10 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-    console.log('body');
-    console.log(req.body);
+    console.log('REquisção');
+    console.log(req);
+    console.log('REquisção stringficada');
+    console.log(JSON.stringfy(req));
     const auth = {login: 'admin', password: 'admin'}  
     const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
     const [login, password] = Buffer.from(b64auth, 'base64').toString().split(':')  
