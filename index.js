@@ -6,6 +6,7 @@ app.use(express.json());
 app.use((req, res, next) => {
     console.log('REquisção steps');
     console.log(req.steps);
+    
     console.log('Requisção stringficada');
     //console.log(JSON.stringify(req));
     const auth = {login: 'admin', password: 'admin'}  
